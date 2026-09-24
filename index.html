@@ -19,6 +19,36 @@
       --text-muted: #94a3b8;
       --accent-cyan: #38bdf8;
       --accent-emerald: #10b981;
+      --track-bg: rgba(255, 255, 255, 0.08);
+      --completed-bg: rgba(16, 185, 129, 0.03);
+      --box-bg: rgba(255, 255, 255, 0.05);
+      --box-border: #475569;
+      --check-color: #090d16;
+      --badge-bg: rgba(255, 255, 255, 0.05);
+      --page-btn-bg: rgba(56, 189, 248, 0.08);
+      --page-btn-border: rgba(56, 189, 248, 0.2);
+      --page-btn-text-hover: #0b0f19;
+    }
+
+    [data-theme="light"] {
+      --bg-main: #f1f5f9;
+      --bg-card: #ffffff;
+      --bg-card-hover: #f8fafc;
+      --border-color: #e2e8f0;
+      --border-highlight: #0284c7;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --accent-cyan: #0284c7;
+      --accent-emerald: #059669;
+      --track-bg: #e2e8f0;
+      --completed-bg: rgba(5, 150, 105, 0.05);
+      --box-bg: #f8fafc;
+      --box-border: #cbd5e1;
+      --check-color: #ffffff;
+      --badge-bg: #f8fafc;
+      --page-btn-bg: #f0f9ff;
+      --page-btn-border: rgba(2, 132, 199, 0.2);
+      --page-btn-text-hover: #ffffff;
     }
 
     * {
@@ -151,7 +181,7 @@
     .progress-track {
       flex: 1;
       height: 6px;
-      background: rgba(255, 255, 255, 0.08);
+      background: var(--track-bg);
       border-radius: 2px;
       overflow: hidden;
     }
@@ -197,7 +227,7 @@
 
     .topic-card.completed {
       border-color: rgba(16, 185, 129, 0.25);
-      background: rgba(16, 185, 129, 0.03);
+      background: var(--completed-bg);
     }
 
     .topic-card.completed .card-header h3 {
@@ -236,8 +266,8 @@
     .custom-box {
       width: 20px;
       height: 20px;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1.5px solid #475569;
+      background: var(--box-bg);
+      border: 1.5px solid var(--box-border);
       border-radius: 3px;
       display: flex;
       align-items: center;
@@ -254,7 +284,7 @@
       display: none;
       width: 14px;
       height: 14px;
-      stroke: #090d16;
+      stroke: var(--check-color);
       stroke-width: 3;
       fill: none;
     }
@@ -274,7 +304,7 @@
       font-weight: 600;
       padding: 2px 8px;
       border-radius: 3px;
-      background: rgba(255, 255, 255, 0.05);
+      background: var(--badge-bg);
       color: var(--text-muted);
       border: 1px solid var(--border-color);
       white-space: nowrap;
@@ -292,8 +322,8 @@
       align-items: center;
       gap: 4px;
       padding: 6px 10px;
-      background: rgba(56, 189, 248, 0.08);
-      border: 1px solid rgba(56, 189, 248, 0.2);
+      background: var(--page-btn-bg);
+      border: 1px solid var(--page-btn-border);
       border-radius: 3px;
       color: var(--accent-cyan);
       text-decoration: none;
@@ -304,8 +334,11 @@
 
     .page-btn:hover {
       background: var(--accent-cyan);
-      color: #0b0f19;
+      color: var(--page-btn-text-hover);
     }
+
+    [data-theme="light"] .moon-icon { display: none; }
+    [data-theme="light"] .sun-icon { display: block !important; }
 
     @media (min-width: 768px) {
       header {
@@ -342,6 +375,10 @@
     </div>
     
     <div class="header-actions">
+      <button class="btn theme-toggle" id="theme-toggle" aria-label="Toggle Light/Dark Mode" title="Toggle Theme" style="padding: 8px;">
+        <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="moon-icon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="sun-icon" style="display:none;"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+      </button>
       <a class="btn primary" href="./English_Grammar_in_Use_5th_Edition.pdf" target="_blank">
         Open PDF
       </a>
@@ -618,6 +655,28 @@
 
 <script>
   const STORAGE_KEY = 'grammar_in_use_progress';
+  const THEME_KEY = 'grammar_in_use_theme';
+
+  // Initialize theme
+  const currentTheme = localStorage.getItem(THEME_KEY) || 'dark';
+  if (currentTheme === 'light') {
+    document.body.setAttribute('data-theme', 'light');
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    if (themeToggleBtn) {
+      themeToggleBtn.addEventListener('click', () => {
+        if (document.body.getAttribute('data-theme') === 'light') {
+          document.body.removeAttribute('data-theme');
+          localStorage.setItem(THEME_KEY, 'dark');
+        } else {
+          document.body.setAttribute('data-theme', 'light');
+          localStorage.setItem(THEME_KEY, 'light');
+        }
+      });
+    }
+  });
 
   function getStoredProgress() {
     try {
