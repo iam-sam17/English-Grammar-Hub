@@ -1,27 +1,24 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>English Grammar in Use (5th Edition) – Core 12 Topics Interactive Study Hub</title>
+  <title>English Grammar in Use – Core 12 Topics</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2338bdf8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 19.5A2.5 2.5 0 0 1 6.5 17H20'%3E%3C/path%3E%3Cpath d='M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z'%3E%3C/path%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-main: #090d16;
-      --bg-card: rgba(18, 24, 38, 0.75);
-      --bg-card-hover: rgba(28, 38, 58, 0.85);
-      --border-color: rgba(255, 255, 255, 0.08);
-      --border-highlight: rgba(56, 189, 248, 0.3);
+      --bg-main: #0b0f19;
+      --bg-card: #121826;
+      --bg-card-hover: #172033;
+      --border-color: #1e293b;
+      --border-highlight: #38bdf8;
       --text-main: #f8fafc;
       --text-muted: #94a3b8;
       --accent-cyan: #38bdf8;
-      --accent-indigo: #818cf8;
       --accent-emerald: #10b981;
-      --accent-amber: #f59e0b;
-      --shadow-glow: 0 10px 30px -10px rgba(56, 189, 248, 0.2);
     }
 
     * {
@@ -32,229 +29,175 @@
     }
 
     body {
-      font-family: 'Hind Siliguri', 'Plus Jakarta Sans', sans-serif;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       background-color: var(--bg-main);
       color: var(--text-main);
-      line-height: 1.6;
+      line-height: 1.5;
       min-height: 100vh;
-      background-image: 
-        radial-gradient(circle at 15% 15%, rgba(56, 189, 248, 0.08) 0%, transparent 45%),
-        radial-gradient(circle at 85% 85%, rgba(129, 140, 248, 0.08) 0%, transparent 45%);
-      background-attachment: fixed;
-      padding-bottom: 60px;
+      padding-bottom: 40px;
     }
 
     .container {
-      max-width: 1240px;
+      max-width: 1200px;
       margin: 0 auto;
       padding: 24px 16px;
     }
 
     /* Header */
     header {
-      text-align: center;
-      padding: 24px 16px 32px;
-      margin-bottom: 24px;
-      border-bottom: 1px solid var(--border-color);
-      position: relative;
-    }
-
-    .badge-top {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 6px 14px;
-      background: rgba(56, 189, 248, 0.1);
-      border: 1px solid rgba(56, 189, 248, 0.25);
-      border-radius: 9999px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--accent-cyan);
-      margin-bottom: 14px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    .brand-title-wrap {
-      display: inline-flex;
+      display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 14px;
-      margin-bottom: 8px;
+      padding: 20px 0 24px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid var(--border-color);
+      gap: 16px;
     }
 
-    .brand-logo-icon {
-      width: 48px;
-      height: 48px;
-      background: linear-gradient(135deg, #0284c7 0%, #6366f1 100%);
-      border-radius: 14px;
+    .brand-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-logo {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, #0284c7, #4f46e5);
+      border-radius: 6px;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 8px 20px -4px rgba(2, 132, 199, 0.45);
       border: 1px solid rgba(255, 255, 255, 0.15);
       flex-shrink: 0;
     }
 
-    .brand-logo-icon svg {
-      width: 26px;
-      height: 26px;
+    .brand-logo svg {
+      width: 22px;
+      height: 22px;
       stroke: #ffffff;
       fill: none;
     }
 
     h1 {
-      font-size: 2.1rem;
-      font-weight: 800;
+      font-size: 1.6rem;
+      font-weight: 700;
       letter-spacing: -0.5px;
-      background: linear-gradient(135deg, #ffffff 20%, #38bdf8 60%, #818cf8 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 0;
-    }
-
-    .subtitle {
-      color: var(--text-muted);
-      font-size: 1.05rem;
-      max-width: 650px;
-      margin: 0 auto 20px;
+      color: var(--text-main);
     }
 
     .header-actions {
       display: flex;
-      justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap;
+      gap: 10px;
     }
 
-    .btn-header {
+    .btn {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      padding: 10px 20px;
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: 12px;
-      font-size: 0.92rem;
+      gap: 6px;
+      padding: 8px 14px;
+      border-radius: 4px;
+      font-size: 0.85rem;
       font-weight: 600;
-      color: var(--text-main);
       text-decoration: none;
-      transition: all 0.25s ease;
-      backdrop-filter: blur(10px);
       cursor: pointer;
+      border: 1px solid var(--border-color);
+      background: var(--bg-card);
+      color: var(--text-main);
+      transition: all 0.15s ease;
     }
 
-    .btn-header:hover {
+    .btn:hover {
       border-color: var(--accent-cyan);
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-glow);
       color: var(--accent-cyan);
     }
 
-    .btn-header.primary {
-      background: linear-gradient(135deg, #0284c7, #2563eb);
-      border: none;
+    .btn.primary {
+      background: #0284c7;
+      border-color: #0284c7;
       color: #fff;
     }
 
-    .btn-header.primary:hover {
-      box-shadow: 0 10px 25px -5px rgba(2, 132, 199, 0.5);
+    .btn.primary:hover {
+      background: #0369a1;
+      border-color: #0369a1;
     }
 
     /* Progress Banner */
     .progress-banner {
       background: var(--bg-card);
       border: 1px solid var(--border-color);
-      border-radius: 20px;
-      padding: 18px 24px;
-      margin-bottom: 28px;
-      backdrop-filter: blur(14px);
+      border-radius: 6px;
+      padding: 14px 18px;
+      margin-bottom: 20px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+      gap: 16px;
     }
 
     .progress-info {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-
-    .progress-title {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
+      font-size: 0.9rem;
       font-weight: 600;
+      color: var(--text-muted);
+      white-space: nowrap;
     }
 
-    .progress-count {
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: var(--text-main);
-    }
-
-    .progress-count span {
+    .progress-info span {
       color: var(--accent-emerald);
+      font-weight: 700;
     }
 
     .progress-track {
       flex: 1;
-      height: 10px;
+      height: 6px;
       background: rgba(255, 255, 255, 0.08);
-      border-radius: 9999px;
+      border-radius: 2px;
       overflow: hidden;
-      position: relative;
     }
 
     .progress-bar {
       height: 100%;
       width: 0%;
-      background: linear-gradient(90deg, #38bdf8, #10b981);
-      border-radius: 9999px;
-      transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      background: var(--accent-emerald);
+      border-radius: 2px;
+      transition: width 0.3s ease;
     }
 
     .progress-pct {
-      font-size: 1.1rem;
+      font-size: 0.9rem;
       font-weight: 700;
       color: var(--accent-cyan);
-      min-width: 50px;
+      min-width: 40px;
       text-align: right;
     }
 
-    /* Cards Grid for Mobile & Desktop */
+    /* Grid */
     .topics-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 16px;
+      gap: 12px;
     }
 
     .topic-card {
       background: var(--bg-card);
       border: 1px solid var(--border-color);
-      border-radius: 18px;
-      padding: 20px;
-      backdrop-filter: blur(12px);
-      transition: all 0.25s ease;
+      border-radius: 6px;
+      padding: 16px;
       display: flex;
       flex-direction: column;
-      gap: 14px;
-      position: relative;
+      gap: 10px;
+      transition: border-color 0.15s ease, background 0.15s ease;
     }
 
     .topic-card:hover {
       background: var(--bg-card-hover);
-      border-color: var(--border-highlight);
-      transform: translateY(-2px);
-      box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.5);
+      border-color: #334155;
     }
 
     .topic-card.completed {
-      border-color: rgba(16, 185, 129, 0.3);
-      background: rgba(16, 185, 129, 0.04);
+      border-color: rgba(16, 185, 129, 0.25);
+      background: rgba(16, 185, 129, 0.03);
     }
 
     .topic-card.completed .card-header h3 {
@@ -272,14 +215,14 @@
     .card-header {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       flex: 1;
     }
 
     .checkbox-wrapper {
       position: relative;
-      width: 28px;
-      height: 28px;
+      width: 20px;
+      height: 20px;
       cursor: pointer;
     }
 
@@ -291,15 +234,15 @@
     }
 
     .custom-box {
-      width: 28px;
-      height: 28px;
+      width: 20px;
+      height: 20px;
       background: rgba(255, 255, 255, 0.05);
-      border: 2px solid rgba(255, 255, 255, 0.2);
-      border-radius: 8px;
+      border: 1.5px solid #475569;
+      border-radius: 3px;
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: all 0.2s ease;
+      transition: all 0.15s ease;
     }
 
     .checkbox-wrapper input:checked ~ .custom-box {
@@ -309,8 +252,8 @@
 
     .custom-box svg {
       display: none;
-      width: 16px;
-      height: 16px;
+      width: 14px;
+      height: 14px;
       stroke: #090d16;
       stroke-width: 3;
       fill: none;
@@ -321,88 +264,63 @@
     }
 
     .card-header h3 {
-      font-size: 1.15rem;
-      font-weight: 700;
+      font-size: 1rem;
+      font-weight: 600;
       color: var(--text-main);
     }
 
     .card-badge {
-      font-size: 0.78rem;
-      padding: 4px 10px;
-      border-radius: 9999px;
-      background: rgba(255, 255, 255, 0.06);
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 3px;
+      background: rgba(255, 255, 255, 0.05);
       color: var(--text-muted);
       border: 1px solid var(--border-color);
       white-space: nowrap;
     }
 
-    .card-focus {
-      font-size: 0.92rem;
-      color: var(--text-muted);
-      line-height: 1.55;
-      padding-left: 40px;
-    }
-
     .card-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
-      padding-left: 40px;
-      padding-top: 4px;
+      gap: 6px;
+      padding-left: 30px;
     }
 
     .page-btn {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      padding: 8px 14px;
-      background: rgba(56, 189, 248, 0.1);
-      border: 1px solid rgba(56, 189, 248, 0.25);
-      border-radius: 10px;
+      gap: 4px;
+      padding: 6px 10px;
+      background: rgba(56, 189, 248, 0.08);
+      border: 1px solid rgba(56, 189, 248, 0.2);
+      border-radius: 3px;
       color: var(--accent-cyan);
       text-decoration: none;
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       font-weight: 600;
-      transition: all 0.2s ease;
+      transition: all 0.15s ease;
     }
 
     .page-btn:hover {
       background: var(--accent-cyan);
-      color: #090d16;
-      transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(56, 189, 248, 0.25);
+      color: #0b0f19;
     }
 
-    .mobile-tip {
-      margin-top: 30px;
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: 16px;
-      padding: 20px;
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-      font-size: 0.9rem;
-      color: var(--text-muted);
-    }
-
-    .mobile-tip strong {
-      color: var(--accent-amber);
-    }
-
-    /* Responsive */
     @media (min-width: 768px) {
+      header {
+        flex-direction: row;
+        justify-content: space-between;
+      }
       .topics-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
       }
-
       h1 {
-        font-size: 2.6rem;
+        font-size: 1.8rem;
       }
     }
 
-    @media (min-width: 1100px) {
+    @media (min-width: 1024px) {
       .topics-grid {
         grid-template-columns: repeat(3, 1fr);
       }
@@ -413,37 +331,29 @@
 
 <div class="container">
   <header>
-    <div class="badge-top">⚡ Cambridge Official Curriculum</div>
-    <div class="brand-title-wrap">
-      <div class="brand-logo-icon">
-        <svg viewBox="0 0 24 24" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+    <div class="brand-wrap">
+      <div class="brand-logo">
+        <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
           <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-          <path d="M12 6v6"></path>
-          <path d="M9 9h6"></path>
         </svg>
       </div>
       <h1>English Grammar in Use</h1>
     </div>
-    <p class="subtitle">IELTS Band 7.5+ প্রস্তুতির জন্য ১২টি অপরিহার্য ব্যাকরণ টপিকের স্মার্ট ইন্টারেক্টিভ হাব</p>
     
     <div class="header-actions">
-      <a class="btn-header primary" href="./English_Grammar_in_Use_5th_Edition.pdf" target="_blank">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
-        বইয়ের পুরো PDF পড়ুন
+      <a class="btn primary" href="./English_Grammar_in_Use_5th_Edition.pdf" target="_blank">
+        Open PDF
       </a>
-      <button class="btn-header" onclick="resetProgress()">
-        🔄 প্রোগ্রেস রিসেট
+      <button class="btn" onclick="resetProgress()">
+        Reset
       </button>
     </div>
   </header>
 
   <!-- Progress Bar -->
   <div class="progress-banner">
-    <div class="progress-info">
-      <div class="progress-title">আপনার প্রোগ্রেস</div>
-      <div class="progress-count"><span id="done-count">0</span> / 12 টপিক শেষ</div>
-    </div>
+    <div class="progress-info"><span id="done-count">0</span> / 12 Completed</div>
     <div class="progress-track">
       <div class="progress-bar" id="progress-bar"></div>
     </div>
@@ -463,20 +373,13 @@
               <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
             </div>
           </label>
-          <h3>১. Sentence Structure</h3>
+          <h3>1. Sentence Structure</h3>
         </div>
         <span class="card-badge">Unit 92-110</span>
       </div>
-      <div class="card-focus">
-        Verb + Object সাজানো, Adverb প্লেসমেন্ট এবং who/which/that দিয়ে Complex sentence গঠন।
-      </div>
       <div class="card-links">
-        <a class="page-btn" href="./English_Grammar_in_Use_5th_Edition.pdf#page=230" target="_blank">
-          📄 Unit 109 (Page 230)
-        </a>
-        <a class="page-btn" href="./English_Grammar_in_Use_5th_Edition.pdf#page=196" target="_blank">
-          📄 Unit 92 (Page 196)
-        </a>
+        <a class="page-btn" href="./English_Grammar_in_Use_5th_Edition.pdf#page=230" target="_blank">Unit 109 (P. 230)</a>
+        <a class="page-btn" href="./English_Grammar_in_Use_5th_Edition.pdf#page=196" target="_blank">Unit 92 (P. 196)</a>
       </div>
     </div>
 
@@ -490,23 +393,14 @@
               <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
             </div>
           </label>
-          <h3>২. Tenses</h3>
+          <h3>2. Tenses</h3>
         </div>
         <span class="card-badge">Unit 1-25</span>
       </div>
-      <div class="card-focus">
-        Present Simple vs Continuous, Present Perfect vs Past Simple এবং Future aspects।
-      </div>
       <div class="card-links">
-        <a class="page-btn" href="./English_Grammar_in_Use_5th_Edition.pdf#page=14" target="_blank">
-          📄 Unit 1 (Page 14)
-        </a>
-        <a class="page-btn" href="./English_Grammar_in_Use_5th_Edition.pdf#page=26" target="_blank">
-          📄 Unit 7 (Page 26)
-        </a>
-        <a class="page-btn" href="./English_Grammar_in_Use_5th_Edition.pdf#page=50" target="_blank">
-          📄 Unit 19 (Page 50)
-        </a>
+        <a class="page-btn" href="./English_Grammar_in_Use_5th_Edition.pdf#page=14" target="_blank">Unit 1 (P. 14)</a>
+        <a class="page-btn" href="./English_Grammar_in_Use_5th_Edition.pdf#page=26" target="_blank">Unit 7 (P. 26)</a>
+        <a class="page-btn" href="./English_Grammar_in_Use_5th_Edition.pdf#page=50" target="_blank">Unit 19 (P. 50)</a>
       </div>
     </div>
 
@@ -520,23 +414,14 @@
               <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
             </div>
           </label>
-          <h3>৩. Prepositions</h3>
+          <h3>3. Prepositions</h3>
         </div>
         <span class="card-badge">Unit 121-136</span>
       </div>
-      <div class="card-focus">
-        at/on/in এর নির্ভুল ব্যবহার এবং Noun/Adj/Verb-এর সাথে ফিক্সড প্রিপজিশন।
-      </div>
       <div class="card-links">
-        <a class="page-btn" href="./English_Grammar_in_Use_5th_Edition.pdf#page=254" target="_blank">
-          📄 Unit 121: Time (P. 254)
-        </a>
-        <a class="page-btn" href="./English_Grammar_in_Use_5th_Edition.pdf#page=258" target="_blank">
-          📄 Unit 123: Place (P. 258)
-        </a>
-        <a class="page-btn" href="./English_Grammar_in_Use_5th_Edition.pdf#page=270" target="_blank">
-          📄 Unit 129: Depend (P. 270)
-        </a>
+        <a class="page-btn" href="./English_Grammar_in_Use_5th_Edition.pdf#page=254" target="_blank">Unit 121 (P. 254)</a>
+        <a class="page-btn" href="./English_Grammar_in_Use_5th_Edition.pdf#page=258" target="_blank">Unit 123 (P. 258)</a>
+        <a class="page-btn" href="./English_Grammar_in_Use_5th_Edition.pdf#page=270" target="_blank">Unit 129 (P. 270)</a>
       </div>
     </div>
 
@@ -550,20 +435,14 @@
               <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
             </div>
           </label>
-          <h3>৪. Conjunctions</h3>
+          <h3>4. Conjunctions</h3>
         </div>
         <span class="card-badge">Unit 38-120</span>
       </div>
-      <div class="card-focus">
-        although, in spite of, unless, as long as, provided, whereas দিয়ে জটিল বাক্য তৈরি।
-      </div>
       <div class="card-links">
-        <a class="page-btn" href="./English_Grammar_in_Use_5th_Edition.pdf#page=88" target="_blank">
-          📄 Unit 38: If (Page 88)
-        </a>
-        <a class="page-btn" href="./English_Grammar_in_Use_5th_Edition.pdf#page=238" target="_blank">
-          📄 Unit 113: Linkers (P. 238)
-        </a>
+        <a class="page-btn" href="./English_Grammar_in_Use_5th_Edition.pdf#page=88" target="_blank">Unit 38 (P. 88)</a>
+        <a class="page-btn" href="./English_Grammar_in_Use_5th_Edition.pdf#page=238" target="_blank">Unit 113 (P. 238)</a>
+        <a class="page-btn" href="./English_Grammar_in_Use_5th_Edition.pdf#page=242" target="_blank">Unit 115 (P. 242)</a>
       </div>
     </div>
 
@@ -577,20 +456,14 @@
               <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
             </div>
           </label>
-          <h3>৫. Articles</h3>
+          <h3>5. Articles</h3>
         </div>
         <span class="card-badge">Unit 69-78</span>
       </div>
-      <div class="card-focus">
-        Countable vs Uncountable, a/an vs the, the-এর নির্দিষ্ট ব্যবহার ও জিরো আর্টিকেল।
-      </div>
       <div class="card-links">
-        <a class="page-btn" href="./English_Grammar_in_Use_5th_Edition.pdf#page=150" target="_blank">
-          📄 Unit 69: Nouns (P. 150)
-        </a>
-        <a class="page-btn" href="./English_Grammar_in_Use_5th_Edition.pdf#page=156" target="_blank">
-          📄 Unit 72: A/The (P. 156)
-        </a>
+        <a class="page-btn" href="./English_Grammar_in_Use_5th_Edition.pdf#page=150" target="_blank">Unit 69 (P. 150)</a>
+        <a class="page-btn" href="./English_Grammar_in_Use_5th_Edition.pdf#page=156" target="_blank">Unit 72 (P. 156)</a>
+        <a class="page-btn" href="./English_Grammar_in_Use_5th_Edition.pdf#page=158" target="_blank">Unit 73 (P. 158)</a>
       </div>
     </div>
 
@@ -604,20 +477,14 @@
               <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
             </div>
           </label>
-          <h3>৬. Subject-Verb Agreement</h3>
+          <h3>6. Subject-Verb Agreement</h3>
         </div>
         <span class="card-badge">Unit 79-91</span>
       </div>
-      <div class="card-focus">
-        Plural nouns with singular verbs, each/every, both/neither-এর সাথে ভার্বের সামঞ্জস্য।
-      </div>
       <div class="card-links">
-        <a class="page-btn" href="./English_Grammar_in_Use_5th_Edition.pdf#page=170" target="_blank">
-          📄 Unit 79: S/Plural (P. 170)
-        </a>
-        <a class="page-btn" href="./English_Grammar_in_Use_5th_Edition.pdf#page=188" target="_blank">
-          📄 Unit 88: All/None (P. 188)
-        </a>
+        <a class="page-btn" href="./English_Grammar_in_Use_5th_Edition.pdf#page=170" target="_blank">Unit 79 (P. 170)</a>
+        <a class="page-btn" href="./English_Grammar_in_Use_5th_Edition.pdf#page=180" target="_blank">Unit 84 (P. 180)</a>
+        <a class="page-btn" href="./English_Grammar_in_Use_5th_Edition.pdf#page=188" target="_blank">Unit 88 (P. 188)</a>
       </div>
     </div>
 
@@ -631,20 +498,14 @@
               <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
             </div>
           </label>
-          <h3>৭. Modals & Auxiliaries</h3>
+          <h3>7. Modals & Auxiliaries</h3>
         </div>
         <span class="card-badge">Unit 26-52</span>
       </div>
-      <div class="card-focus">
-        can/could/may/might, must vs have to, should, would এবং Hedging (মৃদু সম্ভাবনা প্রকাশ)।
-      </div>
       <div class="card-links">
-        <a class="page-btn" href="./English_Grammar_in_Use_5th_Edition.pdf#page=64" target="_blank">
-          📄 Unit 26: Modals (P. 64)
-        </a>
-        <a class="page-btn" href="./English_Grammar_in_Use_5th_Edition.pdf#page=78" target="_blank">
-          📄 Unit 33: Should (P. 78)
-        </a>
+        <a class="page-btn" href="./English_Grammar_in_Use_5th_Edition.pdf#page=64" target="_blank">Unit 26 (P. 64)</a>
+        <a class="page-btn" href="./English_Grammar_in_Use_5th_Edition.pdf#page=74" target="_blank">Unit 31 (P. 74)</a>
+        <a class="page-btn" href="./English_Grammar_in_Use_5th_Edition.pdf#page=78" target="_blank">Unit 33 (P. 78)</a>
       </div>
     </div>
 
@@ -658,20 +519,14 @@
               <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
             </div>
           </label>
-          <h3>৮. Question Formation</h3>
+          <h3>8. Question Formation</h3>
         </div>
         <span class="card-badge">Unit 49-52</span>
       </div>
-      <div class="card-focus">
-        Wh-questions, Inversion, Indirect/Embedded questions (e.g., Do you know where...?)।
-      </div>
       <div class="card-links">
-        <a class="page-btn" href="./English_Grammar_in_Use_5th_Edition.pdf#page=110" target="_blank">
-          📄 Unit 49: Qs 1 (P. 110)
-        </a>
-        <a class="page-btn" href="./English_Grammar_in_Use_5th_Edition.pdf#page=112" target="_blank">
-          📄 Unit 50: Indirect (P. 112)
-        </a>
+        <a class="page-btn" href="./English_Grammar_in_Use_5th_Edition.pdf#page=110" target="_blank">Unit 49 (P. 110)</a>
+        <a class="page-btn" href="./English_Grammar_in_Use_5th_Edition.pdf#page=112" target="_blank">Unit 50 (P. 112)</a>
+        <a class="page-btn" href="./English_Grammar_in_Use_5th_Edition.pdf#page=116" target="_blank">Unit 52 (P. 116)</a>
       </div>
     </div>
 
@@ -685,20 +540,13 @@
               <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
             </div>
           </label>
-          <h3>৯. Basic Punctuation</h3>
+          <h3>9. Basic Punctuation</h3>
         </div>
         <span class="card-badge">Unit 95 & App 5</span>
       </div>
-      <div class="card-focus">
-        Extra information clauses-এ কমার প্রয়োগ এবং সংকোচন ও পজেসিভে অ্যাপোস্ট্রফির ব্যবহার।
-      </div>
       <div class="card-links">
-        <a class="page-btn" href="./English_Grammar_in_Use_5th_Edition.pdf#page=202" target="_blank">
-          📄 Unit 95: Comma (P. 202)
-        </a>
-        <a class="page-btn" href="./English_Grammar_in_Use_5th_Edition.pdf#page=309" target="_blank">
-          📄 Appendix 5 (P. 309)
-        </a>
+        <a class="page-btn" href="./English_Grammar_in_Use_5th_Edition.pdf#page=202" target="_blank">Unit 95 (P. 202)</a>
+        <a class="page-btn" href="./English_Grammar_in_Use_5th_Edition.pdf#page=309" target="_blank">Appendix 5 (P. 309)</a>
       </div>
     </div>
 
@@ -712,20 +560,14 @@
               <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
             </div>
           </label>
-          <h3>১০. Passive Voice</h3>
+          <h3>10. Passive Voice</h3>
         </div>
         <span class="card-badge">Unit 42-46</span>
       </div>
-      <div class="card-focus">
-        Present/Past passive, passive with modals, impersonal passive এবং প্রাতিষ্ঠানিক টোন।
-      </div>
       <div class="card-links">
-        <a class="page-btn" href="./English_Grammar_in_Use_5th_Edition.pdf#page=96" target="_blank">
-          📄 Unit 42: Passive 1 (P. 96)
-        </a>
-        <a class="page-btn" href="./English_Grammar_in_Use_5th_Edition.pdf#page=98" target="_blank">
-          📄 Unit 43: Passive 2 (P. 98)
-        </a>
+        <a class="page-btn" href="./English_Grammar_in_Use_5th_Edition.pdf#page=96" target="_blank">Unit 42 (P. 96)</a>
+        <a class="page-btn" href="./English_Grammar_in_Use_5th_Edition.pdf#page=98" target="_blank">Unit 43 (P. 98)</a>
+        <a class="page-btn" href="./English_Grammar_in_Use_5th_Edition.pdf#page=102" target="_blank">Unit 45 (P. 102)</a>
       </div>
     </div>
 
@@ -739,20 +581,14 @@
               <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
             </div>
           </label>
-          <h3>১১. Gerunds & Infinitives</h3>
+          <h3>11. Gerunds & Infinitives</h3>
         </div>
         <span class="card-badge">Unit 53-68</span>
       </div>
-      <div class="card-focus">
-        Verb + -ing (enjoy doing), Verb + to (decide to do), Preposition + -ing ও Participles।
-      </div>
       <div class="card-links">
-        <a class="page-btn" href="./English_Grammar_in_Use_5th_Edition.pdf#page=118" target="_blank">
-          📄 Unit 53: Verb+-ing (P. 118)
-        </a>
-        <a class="page-btn" href="./English_Grammar_in_Use_5th_Edition.pdf#page=120" target="_blank">
-          📄 Unit 54: Verb+to (P. 120)
-        </a>
+        <a class="page-btn" href="./English_Grammar_in_Use_5th_Edition.pdf#page=118" target="_blank">Unit 53 (P. 118)</a>
+        <a class="page-btn" href="./English_Grammar_in_Use_5th_Edition.pdf#page=120" target="_blank">Unit 54 (P. 120)</a>
+        <a class="page-btn" href="./English_Grammar_in_Use_5th_Edition.pdf#page=132" target="_blank">Unit 60 (P. 132)</a>
       </div>
     </div>
 
@@ -766,30 +602,17 @@
               <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
             </div>
           </label>
-          <h3>১২. Synonyms & Paraphrasing</h3>
+          <h3>12. Synonyms & Paraphrasing</h3>
         </div>
         <span class="card-badge">Unit 47 & 105</span>
       </div>
-      <div class="card-focus">
-        বক্তব্যের রূপান্তর (Direct $\rightarrow$ Indirect) এবং ডিগ্রি পরিবর্তনের মাধ্যমে বাক্য ঘুরিয়ে লেখা।
-      </div>
       <div class="card-links">
-        <a class="page-btn" href="./English_Grammar_in_Use_5th_Edition.pdf#page=106" target="_blank">
-          📄 Unit 47: Reported (P. 106)
-        </a>
-        <a class="page-btn" href="./English_Grammar_in_Use_5th_Edition.pdf#page=222" target="_blank">
-          📄 Unit 105: Compare (P. 222)
-        </a>
+        <a class="page-btn" href="./English_Grammar_in_Use_5th_Edition.pdf#page=106" target="_blank">Unit 47 (P. 106)</a>
+        <a class="page-btn" href="./English_Grammar_in_Use_5th_Edition.pdf#page=222" target="_blank">Unit 105 (P. 222)</a>
+        <a class="page-btn" href="./English_Grammar_in_Use_5th_Edition.pdf#page=226" target="_blank">Unit 107 (P. 226)</a>
       </div>
     </div>
 
-  </div>
-
-  <div class="mobile-tip">
-    <span style="font-size: 1.4rem;">📱</span>
-    <div>
-      <strong>মোবাইল ইউজারদের জন্য টিপ:</strong> ব্রাউজারে যেকোনো পেজ লিঙ্কে ক্লিক করলে সরাসরি ব্রাউজারের নিজস্ব বিল্ট-ইন ভিউয়ারে সেই নির্দিষ্ট পেজটি ওপেন হয়ে যাবে। টিক চিহ্ন দিলে তা আপনার ডিভাইসের লোকাল স্টোরেজে স্বয়ংক্রিয়ভাবে সেভ হয়ে থাকবে!
-    </div>
   </div>
 </div>
 
@@ -816,7 +639,7 @@
   }
 
   function resetProgress() {
-    if (confirm('আপনি কি সত্যি সমস্ত প্রোগ্রেস রিসেট করতে চান?')) {
+    if (confirm('Reset all progress?')) {
       localStorage.removeItem(STORAGE_KEY);
       renderState();
     }
@@ -844,7 +667,6 @@
     document.getElementById('progress-bar').style.width = `${pct}%`;
   }
 
-  // Initialize
   renderState();
 </script>
 
